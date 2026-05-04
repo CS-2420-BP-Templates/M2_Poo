@@ -6,6 +6,7 @@
 
 class Personaje {
 protected:
+    //TODO agregar los dos con estatus protegidos 
     //
 public:
     Personaje(std::string n, int s);
