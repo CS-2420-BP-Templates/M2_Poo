@@ -1,12 +1,10 @@
 #include "Personaje.h" // Importante: Incluir su propia cabecera
 #include <iostream>
 
-//Aqui no va el ataque(), como Personaje es abstracta.
 using namespace std;
 
 // 1. Implementación del Constructor
-// Usamos la lista de inicialización para asignar los valores
-Character::Character(string n, int s) : nombre(n), salud(s) {
+Personaje::Personaje(string n, int s) : nombre(n), salud(s) {
     // Aquí podrías agregar lógica extra si fuera necesario al nacer el personaje
 }
 
@@ -17,11 +15,11 @@ Personaje::~Personaje() {
 }
 
 // 3. Implementación de métodos comunes
-// Este método no es virtual puro, así que todas las subclases lo heredan tal cual
-void Personaje::recibirGolpe(int cantidad) {
+void Personaje::recibirDanio(int cantidad) {
     salud -= cantidad;
     cout << "--- Log de Combate ---" << endl;
-    cout << nombre << " recibio " << cantidad << " puntos de daño." << endl;
+    // TODO agregar log de combate para el usuario
+    
     
     if (salud <= 0) {
         salud = 0;
