@@ -2,7 +2,10 @@
 Proyecto sobre object-oriented-programming. Construiremos un motor basico de combate. Es necesario usar una clase base abstracta (ABC) para definir que es un personaje y luego especializaras ese comportamiento para diferentes clases de héroes.
 
 Objetivos
+Encapsulamiento separando definiciones en .h de implementaciones .cpp
 Implementar Herencia para reutilizar atributos comunes (Nombre, Salud).
+Utilizar Header Guards para evitar inclusiones multiples.
+Implementar polimorfismo con el motor de combate en el archivo main.cpp independiente.
 Utilizar Funciones Virtuales Puras para obligar a cada subclase a definir su propio estilo de ataque.
 Demostrar el Polimorfismo manejando diferentes tipos de héroes a través de un puntero de la clase base.
 
