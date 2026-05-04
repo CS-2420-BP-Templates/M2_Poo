@@ -1,6 +1,14 @@
 # M2_Poo
 Proyecto sobre object-oriented-programming. Construiremos un motor basico de combate. Es necesario usar una clase base abstracta (ABC) para definir que es un personaje y luego especializaras ese comportamiento para diferentes clases de héroes.
 
+Siguiendo las secciones de gestión de memoria de Goodrich (Capítulo 2.4), recuerda que si una clase maneja recursos dinámicos (como punteros), probablemente necesites implementar la Regla de los Tres.
+Esta regla establece que si tu clase necesita definir uno de los siguientes, probablemente necesite los tres para evitar fugas de memoria (memory leaks) o errores de segmentación:
+Destructor: Para liberar la memoria.
+Constructor de Copia: Para duplicar los datos, no solo el puntero (Deep Copy).
+Operador de Asignación (operator=): Para manejar la copia entre objetos ya existentes.
+💡 Reto Pro: En este laboratorio, el Personaje* es manejado por un std::vector en el main. Observa cómo el uso de destructores virtuales en la clase base es el primer paso para cumplir con esta regla y asegurar que la memoria de tus héroes se limpie correctamente.
+
+
 Objetivos
 Encapsulamiento separando definiciones en .h de implementaciones .cpp
 Implementar Herencia para reutilizar atributos comunes (Nombre, Salud).
