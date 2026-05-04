@@ -6,28 +6,40 @@
 
 // --- SECCIÓN DE PERSONALIZACIÓN ---
 // TODO: Elige nombres épicos para tus héroes
-const std::string MI_GUERRERO = "NombreAqui";
-const std::string MI_MAGO = "NombreAqui";
-const std::string MI_ARQUERO = "NombreAqui";
+const std::string MI_GUERRERO = "Galvarino";
+const std::string MI_MAGO = "Maria Sabina";
+const std::string MI_ARQUERO = "Ah Dzic Puncab";
 // ----------------------------------
 
+// --- CLASE GUERRERO ---
 class Guerrero : public Personaje {
-    // ... tu implementación
-    int* estamina; // Imaginemos un recurso dinámico
+private:
+    int proteccion;
+    int* estamina; 
 
 public:
-    Guerrero(string n, int s, int a) : Personaje(n, s), proteccion(a) {
-        estamina = new int(100); 
-    }
-
-    // TODO (Opcional para puntos extra): 
-    // ¿Qué pasaría si intentas copiar un Guerrero a otro? 
-    // Implementa la Regla de los Tres si decides usar punteros aquí.
-    virtual ~Guerrero() {
-        delete estamina; // El destructor es parte de la regla.
-    }
+    // Solo declaramos el constructor y métodos aquí
+    Guerrero(std::string n, int s, int a);
+    virtual ~Guerrero();
+    void atacar() override; // Implementación obligatoria
 };
 
-// ... resto de clases
+// --- CLASE MAGO ---
+class Mago : public Personaje {
+private:
+    int mana;
+public:
+    Mago(std::string n, int s, int m);
+    void atacar() override;
+};
+
+// --- CLASE ARQUERO ---
+class Arquero : public Personaje {
+private:
+    int flechas;
+public:
+    Arquero(std::string n, int s, int f);
+    void atacar() override;
+};
 
 #endif
