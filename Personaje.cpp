@@ -1,6 +1,7 @@
 #include "Personaje.h" // Importante: Incluir su propia cabecera
 #include <iostream>
 
+//Aqui no va el ataque(), como Personaje es abstracta.
 using namespace std;
 
 // 1. Implementación del Constructor
