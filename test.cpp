@@ -24,12 +24,12 @@ int main() {
         reportarTest("Inicializacion de Nombre", guerrero->getNombre() == MI_GUERRERO);
 
         // 2. Verificación de Lógica de Daño
-        // Probamos que el método de la clase base funciona
+        // Probamos que el metodo de la clase base funciona
         guerrero->recibirDanio(50);
         reportarTest("Metodo recibirDanio ejecutable", true);
 
         // 3. Verificación de Ataque (Polimorfismo)
-        // Solo llamamos al método para asegurar que no haya crashes
+        // Solo llamamos al metodo para asegurar que no haya crashes
         cout << "Ejecutando ataque: ";
         guerrero->atacar(); 
 

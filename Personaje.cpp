@@ -19,6 +19,7 @@ void Personaje::recibirDanio(int cantidad) {
     salud -= cantidad;
     cout << "--- Log de Combate ---" << endl;
     // TODO agregar log de combate para el usuario
+
     
     
     if (salud <= 0) {
