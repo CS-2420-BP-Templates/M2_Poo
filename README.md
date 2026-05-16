@@ -6,7 +6,10 @@ Esta regla establece que si tu clase necesita definir uno de los siguientes, pro
 Destructor: Para liberar la memoria.
 Constructor de Copia: Para duplicar los datos, no solo el puntero (Deep Copy).
 Operador de Asignación (operator=): Para manejar la copia entre objetos ya existentes.
-💡 Reto Pro: En este laboratorio, el Personaje* es manejado por un std::vector en el main. Observa cómo el uso de destructores virtuales en la clase base es el primer paso para cumplir con esta regla y asegurar que la memoria de tus héroes se limpie correctamente.
+
+Sigue los TODO en Heroes.cpp, Personaje.cpp, y main.cpp
+
+Reto: En este laboratorio, el Personaje* es manejado por un std::vector en el main. Observa cómo el uso de destructores virtuales en la clase base es el primer paso para cumplir con esta regla y asegurar que la memoria de tus héroes se limpie correctamente.
 
 
 Objetivos

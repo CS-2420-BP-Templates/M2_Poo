@@ -1,9 +1,8 @@
 /*
  * CS 2024 - Laboratorio M2: Sistema de Combate RPG
  * Archivo: main.cpp
- * Hecho por Megan De León 4/2026
-/*
-    
+ * Hecho por Megan De León 4/2026 TODO cambiar esto a tu nombre y fecha
+*/
 #include <iostream>
 #include <vector>
 #include "Personaje.h"
