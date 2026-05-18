@@ -1,30 +1,54 @@
 # M2_Poo
-Proyecto sobre object-oriented-programming. Construiremos un motor basico de combate. 
-Es necesario usar una clase base abstracta (ABC) para definir que es un personaje y luego especializaras ese comportamiento para diferentes clases de héroes.
+# Laboratorio M2: Sistema de Combate RPG ⚔️
+**Asignatura:** CS 2024  
+**Estudiante:** [Tu Nombre Aquí]  
+**Fecha:** Abril 2026
 
-Busca los TODO (falta hacer...) para completar el programa.
+Este repositorio contiene la estructura base para un simulador de combate RPG desarrollado en C++ utilizando **CLion** y **CMake**. El objetivo principal es aplicar los pilares de la POO: **herencia**, **clases abstractas**, **polimorfismo** mediante punteros a la clase base y **gestión dinámica de memoria**.
 
-Tienes dos formas de comprobar si tu código es correcto antes de la fecha límite:
-1. Verificación Local
-Antes de subir tus cambios a GitHub, puedes ejecutar el mismo test que utiliza el Autograder. Abre tu terminal en la carpeta del proyecto y ejecuta los siguientes comandos:
-En Linux / Mac / Git Bash:
-Bash
-g++ Character.cpp Heroes.cpp test.cpp -o suite_pruebas && ./suite_pruebas
-En Windows (PowerShell):
+---
 
-PowerShell
-g++ Character.cpp Heroes.cpp test.cpp -o suite_pruebas; .\suite_pruebas
+## 📋 Lista de Tareas Pendientes (Checklist de TODOs)
 
-¿Qué buscar? Si todo es correcto, deberías ver el mensaje: --- ¡FELICIDADES! Todos los tests han pasado. ---. Si el programa falla o no compila, lee cuidadosamente el error; generalmente te dirá qué clase o método tiene el problema.
+Para completar con éxito este laboratorio, debes implementar los bloques de código marcados como `TODO` a lo largo de los archivos del proyecto:
 
-2. Verificación en GitHub (Autograding)
-Cada vez que hagas un git push de tu código a GitHub, el sistema ejecutará automáticamente las pruebas.
-Ve a la pestaña Actions en la parte superior de tu repositorio en GitHub.
-Haz clic en el flujo de trabajo más reciente (debería llamarse "Autograding").
-Si ves una marca de verificación verde (✅), ¡tu laboratorio está completo y calificado!
-Si ves una X roja (❌), haz clic en el trabajo "Autograding" para ver los logs. Allí podrás ver exactamente qué test falló.
+### 1. Identificación del Autor (`main.cpp`)
+- [ ] Modificar el comentario inicial en `main.cpp` colocando tu nombre real y la fecha de entrega.
 
-🚩 Notas Importantes sobre las Pruebas
-No modifiques test.cpp: El Autograder ignorará tus cambios en este archivo y usará la versión original del profesor.
-Compilación: Si tu código no compila, el test fallará automáticamente con 0 puntos. Asegúrate de que todos los archivos .h y .cpp estén en la raíz del proyecto.
-Nombres de Héroes: Si cambiaste el nombre en Heroes.h pero el objeto no devuelve ese nombre mediante getNombre(), el test fallará.
+### 2. Implementación de Clases Derivadas (`Heroes.h` y `Heroes.cpp`)
+- [ ] En `Heroes.h`: Asegurarse de que las clases `Guerrero`, `Mago` y `Arquero` heredan públicamente (`public`) de la clase `Personaje`.
+- [ ] En `Heroes.h`: Declarar los constructores correspondientes y usar la palabra clave `override` en el método `void atacar() override;`.
+- [ ] En `Heroes.cpp`: Implementar por completo la clase **Mago** (con sus atributos como maná) y su método `atacar()`.
+- [ ] En `Heroes.cpp`: Implementar por completo la clase **Arquero** (con sus atributos como flechas) y su método `atacar()`.
+
+### 3. Instanciación del Equipo (`main.cpp`)
+- [ ] Instanciar al menos un héroe de cada tipo (`Guerrero`, `Mago`, `Arquero`) utilizando el operador `new` y las constantes predefinidas (`MI_GUERRERO`, etc.).
+- [ ] Almacenar los punteros generados dentro del vector polimórfico `party` usando `.push_back()`.
+
+### 4. Bucle de Ataque Polimórfico (`main.cpp`)
+- [ ] Implementar un bucle basado en rangos (`for (Personaje* p : party)`) para recorrer el vector.
+- [ ] Invocar el método `atacar()` de cada personaje usando el operador de flecha (`->`).
+
+### 5. Liberación de Memoria (`main.cpp`)
+- [ ] Recorrer el vector `party` al final del programa para liberar la memoria de cada objeto usando `delete` para evitar fugas de memoria (*memory leaks*).
+
+---
+
+## 🧪 Pruebas Automatizadas y Autograding
+
+Este proyecto cuenta con un sistema de pruebas locales en el archivo `test.cpp`. **No debes modificar este archivo**.
+
+Para verificar si tu código cumple con los requisitos mínimos antes de subirlo a GitHub Classroom:
+1. En CLion, cambia el target de ejecución de `main` a `runTests` (o el nombre configurado en el CMake).
+2. Ejecuta el programa de pruebas.
+3. Si todo es correcto, deberías ver el mensaje: `--- [RESULTADO FINAL]: Todos los tests pasaron con exito. ---`.
+
+Si el programa falla o lanza un *crash*, revisa el flujo de tus constructores y que no estés intentando acceder a punteros nulos.
+
+---
+
+## 🛠️ Instrucciones de Uso en CLion
+
+1. **Importar:** Abre la carpeta del proyecto en CLion; el IDE detectará automáticamente el archivo `CMakeLists.txt`.
+2. **Compilar:** Presiona `Ctrl+F9` (Windows/Linux) o `Cmd+F9` (Mac).
+3. **Ejecutar Main:** Selecciona el target de tu aplicación principal y presiona `Shift+F10` / `Ctrl+R`.

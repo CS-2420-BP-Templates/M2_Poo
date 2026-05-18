@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <cstdlib> // Necesario para el uso de exit()
 #include "Heroes.h"
 #include "Personaje.h"
 
@@ -8,7 +9,7 @@ using namespace std;
 // Función para reportar resultados de forma clara en los logs de GitHub
 void reportarTest(string nombre, bool resultado) {
     cout << "[TEST] " << nombre << ": " << (resultado ? "PASADO ✅" : "FALLADO ❌") << endl;
-    if (!resultado) exit(1); 
+    if (!resultado) exit(1);
 }
 
 int main() {
@@ -18,24 +19,24 @@ int main() {
         // 1. Verificación de Polimorfismo y Uso de Constantes
         // Probamos que el estudiante usó la constante MI_GUERRERO definida en Heroes.h
         Personaje* guerrero = new Guerrero(MI_GUERRERO, 150, 50);
-        
+
         cout << "Verificando nombre personalizado: '" << MI_GUERRERO << "'..." << endl;
-        
+
         reportarTest("Inicializacion de Nombre", guerrero->getNombre() == MI_GUERRERO);
 
         // 2. Verificación de Lógica de Daño
-        // Probamos que el metodo de la clase base funciona
+        // Probamos que el método de la clase base funciona
         guerrero->recibirDanio(50);
         reportarTest("Metodo recibirDanio ejecutable", true);
 
         // 3. Verificación de Ataque (Polimorfismo)
-        // Solo llamamos al metodo para asegurar que no haya crashes
+        // Solo llamamos al método para asegurar que no haya crashes
         cout << "Ejecutando ataque: ";
-        guerrero->atacar(); 
+        guerrero->atacar();
 
-        // Limpieza de memoria
+        // Limpieza de memoria (Crucial para demostrar buenas prácticas de gestión en el Heap)
         delete guerrero;
-        
+
         cout << "\n--- [RESULTADO FINAL]: Todos los tests pasaron con exito. ---" << endl;
 
     } catch (...) {
