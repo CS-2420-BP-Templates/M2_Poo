@@ -1,32 +1,32 @@
-#include "Personaje.h" // Importante: Incluir su propia cabecera
+#include "Personaje.h"
 #include <iostream>
 
-using namespace std;
-
 // 1. Implementación del Constructor
-Personaje::Personaje(string n, int s) : nombre(n), salud(s) {
-    // Aquí podrías agregar lógica extra si fuera necesario al nacer el personaje
+// Usamos la lista de inicialización para asignar los valores de forma eficiente.
+Personaje::Personaje(std::string n, int s) : nombre(n), salud(s) {
+    // Espacio intencionalmente vacío.
+    // Ideal para que los estudiantes comprendan dónde inicializar atributos base.
 }
 
 // 2. Implementación del Destructor
-// Aunque esté vacío, debe definirse porque fue declarado en el .h
+// Importante: Asegúrate de que en 'Personaje.h' este destructor tenga la palabra clave 'virtual'.
 Personaje::~Personaje() {
-    // Aquí iría la liberación de memoria si Personaje tuviera punteros internos
+    // Se deja vacío ya que la clase base no maneja memoria dinámica (punteros en el heap).
+    // Su presencia virtual garantiza que los destructores de las clases hijas se ejecuten correctamente.
 }
 
 // 3. Implementación de métodos comunes
 void Personaje::recibirDanio(int cantidad) {
     salud -= cantidad;
-    cout << "--- Log de Combate ---" << endl;
-    // TODO agregar log de combate para el usuario
 
-    
-    
+    std::cout << "\n--- Log de Combate ---" << std::endl;
+    std::cout << nombre << " recibió " << cantidad << " puntos de daño!" << std::endl;
+
     if (salud <= 0) {
         salud = 0;
-        cout << "¡" << nombre << " ha sido derrotado!" << endl;
+        std::cout << "¡" << nombre << " ha sido derrotado!" << std::endl;
     } else {
-        cout << "Salud restante de " << nombre << ": " << salud << endl;
+        std::cout << "Salud restante de " << nombre << ": " << salud << std::endl;
     }
-    cout << "----------------------" << endl;
+    std::cout << "----------------------\n" << std::endl;
 }

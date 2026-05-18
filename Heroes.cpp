@@ -2,12 +2,9 @@
 #include <iostream>
 
 // Implementación del Guerrero
-Guerrero::Guerrero(std::string n, int s, int a) : Personaje(n, s), proteccion(a) {
-    estamina = new int(100); 
-}
-
-Guerrero::~Guerrero() {
-    delete estamina;
+Guerrero::Guerrero(std::string n, int s, int a)
+    : Personaje(n, s), proteccion(a), estamina(100) {
+    // Constructor code is clean and empty
 }
 
 void Guerrero::atacar() {
